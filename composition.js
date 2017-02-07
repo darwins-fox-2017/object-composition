@@ -6,6 +6,7 @@ class Cookies {
   constructor(nama, ingredients) {
     this.nama        = nama
     this.ingredient  = ingredients
+    this.status      = "Mentah"
   }
 }
 
