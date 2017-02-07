@@ -37,10 +37,10 @@ class CookiesFactory{
 
       switch (nameOfCookie) {
         case "choco chip":
-          this.lists.push(new ChocolateChip(bahan))
+          this.lists.push(new ChocolateChip(nameOfCookie,bahan))
           break;
         case "peanut butter":
-          this.lists.push(new PeanutButter(bahan))
+          this.lists.push(new PeanutButter(nameOfCookie,bahan))
         break;
         default:
           this.lists.push(new OtherCookie(nameOfCookie,bahan))
@@ -53,9 +53,11 @@ class CookiesFactory{
 }
 
 class Cookies{
-  constructor(ingredients){
-    this.ingredients = ingredients
+  constructor(nameOfCookie,ingredients){
+    this.name = nameOfCookie
     this.status = 'mentah'
+    this.ingredients = ingredients
+
   }
 
   bake(){
@@ -72,25 +74,22 @@ class Ingredients{
 }
 
 class PeanutButter extends Cookies{
-  constructor(ingredients){
-    super(ingredients)
-    this.name = "Peanut Butter"
+  constructor(nameOfCookie,ingredients){
+    super(nameOfCookie,ingredients)
     this.peanut_count = 100
   }
 }
 
 class ChocolateChip extends Cookies{
   constructor(ingredients){
-    super(ingredients)
-    this.name = "Chocolate Chips"
+    super(nameOfCookie,ingredients)
     this.choc_chip_count = 200
   }
 }
 
 class OtherCookie extends Cookies{
   constructor(nameOfCookie,ingredients){
-    super(ingredients)
-    this.name = nameOfCookie
+    super(nameOfCookie,ingredients)
     this.other_count = 150
   }
 }
