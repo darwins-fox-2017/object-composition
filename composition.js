@@ -60,7 +60,7 @@ class CookiesFactory{
         }else{
           glutenFree  = false
         }
-        //console.log(ingredients[0])
+        
         ingredients[j] = ingredients[j].split(":")
         ingredientsDetail.push(new Ingredients({
           'name' : ingredients[j][1].trim(),
